@@ -50,7 +50,7 @@ class KeyPad extends StatelessWidget{
             child: Column(
               children: <Widget>[
                 CalculatorKey(symbol: Keys.clear),
-                CalculatorKey(symbol: Keys.decimal),
+                CalculatorKey(symbol: Keys.divide),
                 CalculatorKey(symbol: Keys.multiply),
                 CalculatorKey(symbol: Keys.minus ),
                 CalculatorKey(symbol: Keys.plus),
