@@ -9,8 +9,8 @@ abstract class Keys {
   static KeySymbol percent = const KeySymbol('%');
   static KeySymbol divide = const KeySymbol('÷');
   static KeySymbol multiply = const KeySymbol('x');
-  static KeySymbol subtract = const KeySymbol('-');
-  static KeySymbol add = const KeySymbol('+');
+  static KeySymbol minus = const KeySymbol('-');
+  static KeySymbol plus = const KeySymbol('+');
   static KeySymbol equals = const KeySymbol('=');
   static KeySymbol decimal = const KeySymbol('.');
 
@@ -55,8 +55,7 @@ class CalculatorKey extends StatelessWidget {
     return Expanded(
         child: Container(
             width: double.infinity,
-            child:OutlineButton(
-                borderSide: BorderSide(width: 0.0,color: Colors.white),
+            child:FlatButton(
                 color: color,
                 textColor: Colors.black,
                 onPressed: (){},

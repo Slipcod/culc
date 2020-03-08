@@ -8,7 +8,7 @@ class KeySymbol {
   final String value;
 
   static List<KeySymbol> _functions = [ Keys.clear, Keys.sign, Keys.percent, Keys.decimal ];
-  static List<KeySymbol> _operators = [ Keys.divide, Keys.multiply, Keys.subtract, Keys.add, Keys.equals ];
+  static List<KeySymbol> _operators = [ Keys.divide, Keys.multiply, Keys.minus, Keys.plus, Keys.equals ];
 
   @override
   String toString() => value;

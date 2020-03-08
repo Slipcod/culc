@@ -14,10 +14,21 @@ class KeyPad extends StatelessWidget{
             flex: 3,
             child: Column(
               children: <Widget>[
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
+                CalculatorKey(symbol: Keys.seven),
+                CalculatorKey(symbol: Keys.four),
+                CalculatorKey(symbol: Keys.one),
+                CalculatorKey(symbol: Keys.decimal),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: <Widget>[
+                CalculatorKey(symbol: Keys.eight),
+                CalculatorKey(symbol: Keys.five),
+                CalculatorKey(symbol: Keys.two),
+                CalculatorKey(symbol: Keys.zero),
               ],
             ),
 
@@ -26,10 +37,10 @@ class KeyPad extends StatelessWidget{
             flex: 3,
             child: Column(
               children: <Widget>[
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
+                CalculatorKey(symbol: Keys.nine),
+                CalculatorKey(symbol: Keys.six),
+                CalculatorKey(symbol: Keys.three),
+                CalculatorKey(symbol: Keys.equals),
               ],
             ),
 
@@ -38,22 +49,11 @@ class KeyPad extends StatelessWidget{
             flex: 3,
             child: Column(
               children: <Widget>[
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-                buildButton(letter: "Numbers"),
-              ],
-            ),
-
-          ),
-          Expanded(
-            flex: 3,
-            child: Column(
-              children: <Widget>[
-                buildButton(letter: "signs"),
-                buildButton(letter: "signs"),
-                buildButton(letter: "signs"),
-                buildButton(letter: "signs"),
+                CalculatorKey(symbol: Keys.clear),
+                CalculatorKey(symbol: Keys.decimal),
+                CalculatorKey(symbol: Keys.multiply),
+                CalculatorKey(symbol: Keys.minus ),
+                CalculatorKey(symbol: Keys.plus),
               ],
             ),
           ),
