@@ -70,8 +70,7 @@ Widget buildButton({String letter}) {
   return Expanded(
       child: Container(
           width: double.infinity,
-          child:OutlineButton(
-              borderSide: BorderSide(width: 0.0,color: Colors.white),
+          child:FlatButton(
               color: Colors.black12,
               textColor: Colors.black,
               onPressed: (){},
