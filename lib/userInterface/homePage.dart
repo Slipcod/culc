@@ -1,3 +1,5 @@
+import 'package:culc/controllers/keyController.dart';
+import 'package:culc/controllers/processor.dart';
 import 'package:flutter/material.dart';
 
 import 'display.dart';
@@ -13,6 +15,25 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  String _output;
+
+  @override
+  void initState() {
+
+    KeyController.listen((event) => Processor.process(event));
+    Processor.listen((data) => setState(() { _output = data; }));
+    Processor.refresh();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+
+    KeyController.dispose();
+    Processor.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Display(),
+            Display(value: _output),
             KeyPad()
           ],
         )

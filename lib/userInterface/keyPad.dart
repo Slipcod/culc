@@ -14,10 +14,10 @@ class KeyPad extends StatelessWidget{
             flex: 3,
             child: Column(
               children: <Widget>[
-                CalculatorKey(symbol: Keys.seven),
-                CalculatorKey(symbol: Keys.four),
-                CalculatorKey(symbol: Keys.one),
-                CalculatorKey(symbol: Keys.decimal),
+                ButtonsKey(symbol: Keys.seven),
+                ButtonsKey(symbol: Keys.four),
+                ButtonsKey(symbol: Keys.one),
+                ButtonsKey(symbol: Keys.decimal),
               ],
             ),
           ),
@@ -25,22 +25,10 @@ class KeyPad extends StatelessWidget{
             flex: 3,
             child: Column(
               children: <Widget>[
-                CalculatorKey(symbol: Keys.eight),
-                CalculatorKey(symbol: Keys.five),
-                CalculatorKey(symbol: Keys.two),
-                CalculatorKey(symbol: Keys.zero),
-              ],
-            ),
-
-          ),
-          Expanded(
-            flex: 3,
-            child: Column(
-              children: <Widget>[
-                CalculatorKey(symbol: Keys.nine),
-                CalculatorKey(symbol: Keys.six),
-                CalculatorKey(symbol: Keys.three),
-                CalculatorKey(symbol: Keys.equals),
+                ButtonsKey(symbol: Keys.eight),
+                ButtonsKey(symbol: Keys.five),
+                ButtonsKey(symbol: Keys.two),
+                ButtonsKey(symbol: Keys.zero),
               ],
             ),
 
@@ -49,11 +37,23 @@ class KeyPad extends StatelessWidget{
             flex: 3,
             child: Column(
               children: <Widget>[
-                CalculatorKey(symbol: Keys.clear),
-                CalculatorKey(symbol: Keys.divide),
-                CalculatorKey(symbol: Keys.multiply),
-                CalculatorKey(symbol: Keys.minus ),
-                CalculatorKey(symbol: Keys.plus),
+                ButtonsKey(symbol: Keys.nine),
+                ButtonsKey(symbol: Keys.six),
+                ButtonsKey(symbol: Keys.three),
+                ButtonsKey(symbol: Keys.equals),
+              ],
+            ),
+
+          ),
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: <Widget>[
+                ButtonsKey(symbol: Keys.clear),
+                ButtonsKey(symbol: Keys.divide),
+                ButtonsKey(symbol: Keys.multiply),
+                ButtonsKey(symbol: Keys.minus ),
+                ButtonsKey(symbol: Keys.plus),
               ],
             ),
           ),

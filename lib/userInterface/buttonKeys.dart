@@ -1,3 +1,4 @@
+import 'package:culc/controllers/keyController.dart';
 import 'package:flutter/material.dart';
 
 import 'key-symbol.dart';
@@ -26,9 +27,9 @@ abstract class Keys {
   static KeySymbol nine = const KeySymbol('9');
 }
 
-class CalculatorKey extends StatelessWidget {
+class ButtonsKey extends StatelessWidget {
 
-  CalculatorKey({ this.symbol });
+  ButtonsKey({ this.symbol });
 
   final KeySymbol symbol;
 
@@ -48,7 +49,7 @@ class CalculatorKey extends StatelessWidget {
     }
   }
 
-  //static dynamic _fire(CalculatorKey key) => KeyController.fire(KeyEvent(key));
+  static dynamic _fire(ButtonsKey key) => KeyController.fire(KeyEvent(key));
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class CalculatorKey extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
                 color: color,
                 textColor: Colors.black,
-                onPressed: (){},
+                onPressed: () => _fire(this),
                 child: Text(symbol.value)
             ))
     );
