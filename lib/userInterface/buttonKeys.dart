@@ -37,10 +37,10 @@ class CalculatorKey extends StatelessWidget {
     switch (symbol.type) {
 
       case KeyType.FUNCTION:
-        return Colors.black54;
+        return Colors.deepOrange;
 
       case KeyType.OPERATOR:
-        return Colors.black45;
+        return Colors.white;
 
       case KeyType.INTEGER:
       default:
@@ -56,15 +56,7 @@ class CalculatorKey extends StatelessWidget {
         child: Container(
             width: double.infinity,
             child:FlatButton(
-                shape: RoundedRectangleBorder(side: BorderSide(
-                    width: 0.0,
-                    style: BorderStyle.none
-                ), borderRadius: BorderRadius.only(
-                  topLeft: Radius.zero,
-                  topRight: Radius.zero,
-                  bottomLeft: Radius.zero,
-                  bottomRight: Radius.zero,
-                )),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
                 color: color,
                 textColor: Colors.black,
                 onPressed: (){},
@@ -72,17 +64,4 @@ class CalculatorKey extends StatelessWidget {
             ))
     );
   }
-}
-
-Widget buildButton({String letter}) {
-  return Expanded(
-      child: Container(
-          width: double.infinity,
-          child:FlatButton(
-              color: Colors.black12,
-              textColor: Colors.black,
-              onPressed: (){},
-              child: Text("$letter")
-          ))
-  );
 }
