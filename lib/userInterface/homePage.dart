@@ -22,8 +22,13 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
 
     KeyController.listen((event) => Processor.process(event));
-    Processor.paramsListen((data) => setState(() { _outputParams = data; }));
-    Processor.resultListen((data) => setState(() { _outputResult = data; }));
+    Processor.paramsListen((data) => setState(() {
+      print(data);
+      _outputParams = data; }));
+    Processor.resultListen((data) => setState(() {
+      print(data);
+
+      _outputResult = data; }));
     Processor.refresh();
     super.initState();
   }

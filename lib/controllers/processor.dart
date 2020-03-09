@@ -22,14 +22,17 @@ abstract class Processor {
   static StreamSubscription resultListen(Function handler) => _resultStream.listen(handler);
 
   static void _paramsFire(String params) => _paramsController.add(_outputParams);
-  static void _resultFire(String result) => _paramsController.add(_outputResult);
+  static void _resultFire(String result) => _resultController.add(_outputResult);
 
-  static void refresh() =>{_paramsFire(_outputParams), _resultFire(_outputResult)};
+  static void refresh(){
+      _paramsFire(_outputParams);
+      _resultFire(_outputResult);
+  }
 
 
 
-  static String get _outputParams => _result == null ? _equation : _result;
-  static String get _outputResult => _result;
+  static String get _outputParams => _equation ;
+  static String get _outputResult => _result == null ? '0' : _result;
 
 
   //static void refresh() => _fire(_output);
