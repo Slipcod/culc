@@ -12,21 +12,37 @@ abstract class Processor {
   static String _valB = '0';
   static String _result;
 
-  static StreamController _controller = StreamController();
-  static Stream get _stream => _controller.stream;
+  static StreamController _paramsController = StreamController();
+  static StreamController _resultController = StreamController();
 
-  static StreamSubscription listen(Function handler) => _stream.listen(handler);
-  static void refresh() => _fire(_output);
+  static Stream get _paramsStream => _paramsController.stream;
+  static Stream get _resultStream => _resultController.stream;
 
-  static void _fire(String data) => _controller.add(_output);
+  static StreamSubscription paramsListen(Function handler) => _paramsStream.listen(handler);
+  static StreamSubscription resultListen(Function handler) => _resultStream.listen(handler);
 
-  static String get _output => _result == null ? _equation : _result;
+  static void _paramsFire(String params) => _paramsController.add(_outputParams);
+  static void _resultFire(String result) => _paramsController.add(_outputResult);
+
+  static void refresh() =>{_paramsFire(_outputParams), _resultFire(_outputResult)};
+
+
+
+  static String get _outputParams => _result == null ? _equation : _result;
+  static String get _outputResult => _result;
+
+
+  //static void refresh() => _fire(_output);
+
+  //static void _fire(String data) => _controller.add(_output);
+  //static String get _output => _result == null ? _equation : _result;
+
 
   static String get _equation => _valA
       + (_operator != null ? ' ' + _operator.value : '')
       + (_valB != '0' ? ' ' + _valB : '');
 
-  static dispose() => _controller.close();
+  static dispose() => _paramsController.close();
 
   static process(dynamic event) {
 

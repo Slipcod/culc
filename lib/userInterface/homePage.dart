@@ -15,13 +15,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  String _output;
+  String _outputParams;
+  String _outputResult;
 
   @override
   void initState() {
 
     KeyController.listen((event) => Processor.process(event));
-    Processor.listen((data) => setState(() { _output = data; }));
+    Processor.paramsListen((data) => setState(() { _outputParams = data; }));
+    Processor.resultListen((data) => setState(() { _outputResult = data; }));
     Processor.refresh();
     super.initState();
   }
@@ -41,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Display(value: _output),
+            Display(value: _outputParams,out: _outputResult,),
             KeyPad()
           ],
         )

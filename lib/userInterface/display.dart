@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Display extends StatelessWidget{
-  Display({ Key key, this.value,}) : super(key: key);
 
+  Display({ Key key, this.value, this.out}) : super(key: key);
+
+  final String out;
   final String value;
-  String get _output => value.toString();
+  String get _params=> value.toString();
+  String get _output => out.toString();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class Display extends StatelessWidget{
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                    _output,
+                    _params,
                     style: TextStyle(fontSize: 32.0, color: Colors.white),
                   ),
                 ),
@@ -39,7 +42,7 @@ class Display extends StatelessWidget{
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Text(
-                    'Output',
+                    _output,
                     style: TextStyle(fontSize: 32.0, color: Colors.white),
                   ),
                 ),
